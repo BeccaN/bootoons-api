@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# create series of tags and comics using faker
+# a random generator to assign 3 random tags to each comic
+tags = ["humor", "scary", "romance", "slice of life", "animal", "cute", "action", "mystery"]
+
+tags.each do |t|
+    Tag.create(title: t)
+end
+
+12.times do 
+    Comic.create(title: Faker::FunnyName.name, description: Faker::Lorem.sentence, img_url: Faker::Avatar.image)
+end
+
+Comic.all.each do |c|
+    tags = Tag.all.sample(3)
+    c.tags += tags
+end
