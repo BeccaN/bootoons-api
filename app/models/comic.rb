@@ -1,8 +1,7 @@
 class Comic < ApplicationRecord
-    has_many :comic_tags
-    has_many :tags, through: :comic_tags
+    belongs_to :category
 
-    def comic_tags
-        self.tags.map{|t| t.title}
+    def comic_category
+        self.category.name
     end
 end
