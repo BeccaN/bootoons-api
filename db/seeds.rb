@@ -1,7 +1,5 @@
 # create series of tags and comics using faker
 # a random generator to assign 3 random tags to each comic
-Comic.destroy_all
-Category.destroy_all
 
 categories = ["humor", "scary", "romance", "slice of life", "animal", "cute", "action", "mystery"]
 
