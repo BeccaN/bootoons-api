@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 2021_03_12_194013) do
     t.text "name"
   end
 
-  create_table "comic_tags", force: :cascade do |t|
-    t.integer "comic_id"
-    t.integer "tag_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "comics", force: :cascade do |t|
     t.text "title"
     t.text "description"
