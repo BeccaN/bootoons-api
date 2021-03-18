@@ -6,6 +6,7 @@ class ComicsController < ApplicationController
 
     def create
         comic = Comic.new(comic_params)
+        
         if comic.save
             render json: comic, status: :accepted
         else
