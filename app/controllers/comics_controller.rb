@@ -10,7 +10,7 @@ class ComicsController < ApplicationController
         if comic.save
             render json: comic, status: :accepted
         else
-            render json: {errors: comic.errors.full_messages}, status: :unprocessible_entity
+            render json: {errors: comic.errors.full_messages}, status: 422
         end
     end
 
